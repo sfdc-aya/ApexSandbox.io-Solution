@@ -3,11 +3,13 @@ public String whichTwo(Integer a, Integer b, Integer c) {
     Integer sumA = b+c;
     Integer sumB = a+c;
     
-    if(sumA){
-        return a;
-    }else if(sumB){
+    if(a+c == b){
         return b;
-    }else{
+    }else if(b+c == a){
+        return a;
+    }else if(a+b == c){
         return c;
+    }else{
+        return '';
     }
 }
