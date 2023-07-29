@@ -1,8 +1,7 @@
 public Boolean isEndWithZero(Integer num){
-    //Integer remainder = Math.mod(num,2); //11,2
-     if((num % 10 == 0)){
-         return false;
-     }else{
+     if(Math.mod(num, 10) == 0){
          return true;
+     }else{
+         return false;
      }
 }
