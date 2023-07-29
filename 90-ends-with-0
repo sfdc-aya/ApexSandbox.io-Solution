@@ -1,8 +1,8 @@
 public Boolean isEndWithZero(Integer num){
     Integer remainder = Math.mod(num, 2);
      if((remainder == 0)){
-         return true;
-     }else{
          return false;
+     }else{
+         return true;
      }
 }
