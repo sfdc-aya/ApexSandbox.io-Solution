@@ -1,7 +1,7 @@
 public String whichTwo(Integer a, Integer b, Integer c) {
-    if(a+b == c){
+    if((a+b) == c){
         return c;
-    }else if(a+c == b){
+    }else if((a+c) == b){
         return b;
     }else{
         return '';
