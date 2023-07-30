@@ -1,5 +1,6 @@
 public List<String> getNamesInAscOrder(List<String> accountNames)
 {
     List<String> inputList = new List<String>{ 'Adrienne Copeland', 'Maxine Colon', 'Jan Coleman', 'Margarita Miller', 'Jacqueline Mcdaniel', 'Ethel Parsons', 'Joan Nichols', 'Rachel West', 'Leroy Holland', 'Grant Collier', 'Ramon Reeves', 'Hannah Hale', 'Lamar French', 'Jesse Beck', 'Margie Griffin', 'Faye Butler', 'Shelley Nelson', 'Abel Farmer', 'Ricardo Bridges', 'Wilma Santos', 'Jane Hubbard', 'Neal Berry', 'Denise Klein', 'Tami Oliver', 'Ed Vargas', 'Morris Aguilar', 'Blake Howard', 'William Summers', 'Eloise Lynch', 'Raul Morgan', 'Sandy Curry', 'Lola Stevenson', 'Pauline Vasquez', 'Eleanor Bowen', 'Charlene Swanson', 'Jo Gonzalez', 'Malcolm Houston', 'Johnnie Day', 'Vincent Saunders', 'Wilbur Willis', 'Jeffery Robinson', 'Bradley Freeman', 'Faith Reynolds', 'Don Fitzgerald', 'Marlene Fowler', 'Sheryl Harrington', 'Jan Reese', 'Terry Welch', 'Christopher Grant', 'Flora Chavez' };
-    return inputList.size();
+    inputList.size();
+    return inputList;
 }
