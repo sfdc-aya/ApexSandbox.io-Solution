@@ -1,5 +1,5 @@
 public Boolean isPrime(Integer num) {
-   if((math.mod(num,2) != 0 && num>1){
+   if((math.mod(num,2) == 0 && num>1){
            return true;
    }else{
        return false;
