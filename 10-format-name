@@ -1,0 +1,7 @@
+public String formatName(String firstName, String lastName) {
+    if(lastName != null){
+        return lastName +', '+ firstName;
+    }else{
+        return firstName;
+    }
+}
