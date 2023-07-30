@@ -1,17 +1,16 @@
 public String changeTimeFormat(String strTime) {
-    String h = strTime.substringBefore(':');
-    String m = strTime.substringAfter(':');
-
-    Integer int = Integer.valueOf(h);
-    if (int == 0) {
-        return '12:' + m + ' AM';
-    } else if (int < 12) {
-        return h + ':' + m + ' AM';
-    } else if (int == 12) {
-        return '12:' + m + ' PM';
+    String hours = strTime.substringBefore(':');
+    String minutes = strTime.substringAfter(':');
+    Integer intHours = Integer.valueOf(hours);
+    if (intHours == 0) {
+        return '12:' + minutes + ' AM';
+    } else if (intHours < 12) {
+        return hours + ':' + minutes + ' AM';
+    } else if (intHours == 12) {
+        return '12:' + minutes + ' PM';
     } else {
-        int -= 12;
-        h = String.valueOf(int).leftPad(2,'0');
-        return h + ':' + m + ' PM';
+        intHours -= 12;
+        hours = String.valueOf(intHours).leftPad(2,'0');
+        return hours + ':' + minutes + ' PM';
     }
 }
