@@ -1,0 +1,7 @@
+public Boolean isPrime(Integer num) {
+   if(num>1 && num/num == 1){
+       return true;
+   }else{
+       return false;
+   }
+}
