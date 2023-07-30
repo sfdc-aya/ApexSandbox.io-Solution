@@ -1,0 +1,20 @@
+public Integer nextPrime(Integer num) {
+    if (num < 2) {
+        return 2;
+    }
+
+    Integer candidate = num + 1;
+    while (!isPrime(candidate)) {
+        candidate += 1;
+    }
+    return candidate;
+}
+
+public Boolean isPrime(Integer candidate) {
+    for (Integer i = 2; i < candidate; i++) {
+        if (Math.mod(candidate, i) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
