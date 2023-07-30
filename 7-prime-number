@@ -4,5 +4,5 @@ public Boolean isPrime(Integer num) {
                 return false;
             }
         }
-    return true;
+        return true;
 }
