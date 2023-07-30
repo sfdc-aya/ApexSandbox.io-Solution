@@ -7,9 +7,7 @@ public String formatName(String firstName, String lastName) {
     }else if((lastName != null || lastName != '' || lastName != 'null') &&
             (firstName != null || firstName != '' || firstName != 'null')){
         return lastName, firstName;
-    }
-    
-    else{
+    }else{
         return '';
     }
 }
