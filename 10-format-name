@@ -1,7 +1,12 @@
 public String formatName(String firstName, String lastName) {
-    if(lastName != null || lastName != 'null'){
+    if(firstName != null || firstName != 'null' || firstName != '' 
+    && lastName != null || lastName != 'null' || lastName != '' ){
         return lastName +', '+ firstName;
-    }else if(lastName == '' || lastName == 'null'  ){
+    }else if(lastName == '' || lastName == 'null' ||  lastName == null ){
         return firstName;
+    }else if(firstName == '' || firstName == 'null' ||  firstName == null){
+        return lastName;
+    }else{
+        return '';
     }
 }
