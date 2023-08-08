@@ -1,5 +1,10 @@
 public List<apxio__Student__c> selectStudentsWithoutContactInfo() {
-    List<apxio__Student__c> stuList = [Select Id, Name from apxio__Student__c where 
-    apxio__Active__c = true and (apxio__Email__c = null || apxio__Phone__c = null)  order by Name];
+   List<apxio__Student__c> stuList = [SELECT Id, Name
+                                               FROM apxio__Student__c
+                                              WHERE apxio__Active__c=True
+                                                AND (apxio__Phone__c=null 
+                                                 OR  apxio__Email__c=null)
+                                              ORDER BY Name];
+
     return stuList;
 }
