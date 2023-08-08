@@ -3,7 +3,7 @@ public String registerStudent(String name, String phone, String email) {
     student.name = name;
     student.apxio__Phone__c = phone;
     student.apxio__Email__c = email;
-    return Id;
+    insert student;
 
     apxio__Student__c regNumber = [Select apxio__Registration_Number__c from apxio__Student__c where apxio__Student__c.id in :student.Id];
     return regNumber.apxio__Registration_Number__c;
