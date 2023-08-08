@@ -5,6 +5,6 @@ public String registerStudent(String name, String phone, String email) {
     student.apxio__Email__c = email;
     return Id;
 
-    apxio__Registration_Number__c regNumber = [Select apxio__Registration_Number__c from apxio__Student__c where id in :student.Id];
+    apxio__Student__c regNumber = [Select apxio__Registration_Number__c from apxio__Student__c where apxio__Student__c.id in :student.Id];
     return regNumber.apxio__Registration_Number__c;
 }
