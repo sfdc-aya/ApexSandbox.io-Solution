@@ -1,13 +1,12 @@
 public Id insertCourse(String name, String details, Integer credits) {
-    if(course.apxio__Credits__c == 1 || 2 || 3 || 4){
-        apxio__Course__c course = new apxio__Course__c();
-        course.Name = name;
-        course.apxio__Course_Details__c = details;
-        course.apxio__Credits__c = Integer.valueof(credits);
+    apxio__Course__c course = new apxio__Course__c();
+    course.name = name;
+    course.apxio__Course_Details__c = details;
+    course.apxio__Credits__c = String.valueof(credits);
+    try{
         insert course;
-
-        return course.Id;
-    }else{
+    }catch(DMLException e){
         return null;
     }
+    return course.Id;
 }
