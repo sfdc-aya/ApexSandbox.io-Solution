@@ -1,0 +1,6 @@
+public List<apxio__Student__c> selectUnreachableStudents() {
+    List<apxio__Student__c> unr = 
+        [Select Id, Name from apxio__Student__c where apxio__Active__c = true &&
+        apxio__Email__c == null && apxio__Phone__c == null Order by ASC];
+    return unr;
+}
