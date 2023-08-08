@@ -1,8 +1,7 @@
 public Id classFromCourse(String courseName) {
     List<apxio__Course__c> name = [Select Id
                             from apxio__Course__c
-                            where apxio__Course__c.Name =:courseName 
-                            AND apxio__Class__c =:courseName ];
+                            where apxio__Course__c.Name =:courseName ];
     if(name.size()==0){
         return null; 
     }
