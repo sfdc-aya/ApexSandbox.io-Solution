@@ -1,5 +1,5 @@
 public Id classFromCourse(String courseName) {
-    List<apxio__Course__c> name = [Select Id
+    List<apxio__Course__c> name = [Select Id, Name
                             from apxio__Course__c
                             where apxio__Course__c.Name =:courseName ];
     if(name.size()==0){
