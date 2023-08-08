@@ -1,10 +1,4 @@
 public List<apxio__Student__c> selectActiveStudents() {
-   apxio__Student__c activeStu = new apxio__Student__c();
-   activeStu.name = name;
-   insert activeStu;
-
-   apxio__Student__c stuD = [Select apxio__Active__c 
-                            from apxio__Student__c 
-                            where  apxio__Active__c = true];
-    return stuD.apxio__Active__c;
+    List<apxio__Student__c> activeStu = [Select Id, Name from apxio__Student__c where apxio__Active__c = true];
+    return activeStu;
 }
