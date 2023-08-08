@@ -1,6 +1,16 @@
 public Id classFromCourse(String courseName) {
-    List<apxio__Class__c> name = [Select Id
-                            from apxio__Class__c
-                            where apxio__Class__c.apxio__Course__c =:courseName 
+    List<apxio__Course__c> name = [Select Id
+                            from apxio__Course__c
+                            where apxio__Course__c.Name =:courseName 
                             AND apxio__Class__c =:courseName ];
+    if(name.size()==0){
+        return null; 
+    }
+    apxio__Class__c cls = new apxio__Class__c();
+    cls.Name = course[0].Name;
+    cls.apxio__Course__c = course[0].Id;
+
+    insert cls;
+
+    return cls.Id;
 }
