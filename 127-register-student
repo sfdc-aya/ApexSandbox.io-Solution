@@ -3,7 +3,8 @@ public String registerStudent(String name, String phone, String email) {
     student.name = name;
     student.apxio__Phone__c = phone;
     student.apxio__Email__c = email;
+    return Id;
 
-    return student.apxio__Registration_Number__c;
+  student.apxio__Registration_Number__c = [Select apxio__Registration_Number__c from apxio__Student__c where id in: id];
 
 }
