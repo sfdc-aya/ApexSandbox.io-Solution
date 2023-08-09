@@ -2,7 +2,7 @@ public String divide(Integer a, Integer b){
     try{
         String result = String.valuof(a/b);
         return result;
-    }catch(Exception e){
-        return e.getMessage();
+    }catch(Exception err){
+        return err.getMessage();
     }
 }
