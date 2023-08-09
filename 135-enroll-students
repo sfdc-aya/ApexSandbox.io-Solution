@@ -1,0 +1,18 @@
+public void enrollStudents(List<String> emails, String className) {
+    List<apxio__Student__c> updateList = new List<apxio__Student__c>();
+    List<apxio__Student__c> stu = [Select Id, Name, 
+                                        (Select Name 
+                                        from apxio__Class__c 
+                                        where name =: className)
+                                    from apxio__Student__c
+                                    where apxio__Email__c =: emails ];
+    for(apxio__Student__c s : stu){
+        apxio__Class_Enrollment__c enr = new apxio__Class_Enrollment__c();
+        enr.apxio__Student__c = s.Name;
+        enr.apxio__Offered_Class__c = s.className;
+        updateList.add(enr);
+    }
+    if(updateList.size()>0){
+        insert updateList;
+    }
+}
