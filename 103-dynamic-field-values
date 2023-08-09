@@ -1,0 +1,6 @@
+public List<String> getFieldsValue(Account acc, List<String> fields)
+{
+    String stObj = String.valueOf(acc);
+    fields.add(stObj);
+    return fields;
+}
