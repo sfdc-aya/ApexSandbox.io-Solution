@@ -2,7 +2,7 @@ public void enrollStudents(List<String> emails, String className) {
     List<apxio__Class_Enrollment__c> updateList = new List<apxio__Class_Enrollment__c>();
     List<apxio__Student__c> stu = [Select Id, apxio__Email__c
                                     from apxio__Student__c
-                                    where apxio__Email__c =: emails ];
+                                    where apxio__Email__c in : emails ];
     List<apxio__Class__c> classes = [Select Id,Name 
                                     from apxio__Class__c
                                     where Name =: className];
