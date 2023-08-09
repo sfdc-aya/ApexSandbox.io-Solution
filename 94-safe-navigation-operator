@@ -1,0 +1,3 @@
+public String getAccountBillingCityWithSafeNavigation(List<Account> accounts){
+   return accounts.BillingCity[0]?.upperCase();
+}
