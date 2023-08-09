@@ -1,5 +1,5 @@
 public void enrollStudents(List<String> emails, String className) {
-    List<apxio__Student__c> updateList = new List<apxio__Student__c>();
+    List<apxio__Class_Enrollment__c> updateList = new List<apxio__Class_Enrollment__c>();
     List<apxio__Student__c> stu = [Select Id, Name, 
                                         (Select Name 
                                         from apxio__Class__c 
