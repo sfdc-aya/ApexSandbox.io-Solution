@@ -1,5 +1,4 @@
 public List<Account> checkAccounts(List<Account> accounts){
-    List<Account> accounts;
     if(accounts == null){
         throw new IllegalArgumentException('accounts should not be null');
     }
