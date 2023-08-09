@@ -12,7 +12,7 @@ public void enrollStudents(List<String> emails, String className) {
         enr.apxio__Offered_Class__c = classes.id;
         updateList.add(enr);
     }
-    if(updateList.size()>0){
+    if(!updateList.isEmpty()){
         insert updateList;
     }
 }
