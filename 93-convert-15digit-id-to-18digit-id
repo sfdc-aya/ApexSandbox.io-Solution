@@ -3,6 +3,6 @@ public String convert15to18DigitId(String fifteenDigit)
   if(fifteenDigit.legth() == 15){
      return id(fifteenDigit);
   }else{
-     return  -1;
+     return  '-1';
   }
 }
