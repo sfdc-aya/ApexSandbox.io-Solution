@@ -1,6 +1,6 @@
 public String divide(Integer a, Integer b){
     try{
-        String result = String.valuof(a/b);
+        String result = String.valueof(a/b);
         return result;
     }catch(Exception err){
         return err.getMessage();
