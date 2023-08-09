@@ -1,4 +1,6 @@
 public Boolean isTypeAccount(sObject record)
 {
-    return sObject.instanceOf(record);
+    sObject record = null;
+    Boolean result = record instanceOf sObject;
+    return result;
 }
