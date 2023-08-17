@@ -1,0 +1,7 @@
+public Integer diff(Integer a, Integer b) {
+    if(a > b){
+        return Math.abs(b-a);
+    }else{
+        return Math.abs(a-b);
+    }
+}
