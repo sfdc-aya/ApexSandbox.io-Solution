@@ -1,0 +1,9 @@
+public Boolean ascendingOrder(Integer a, Integer b, Integer c) {
+    if(b => a){
+        return true;
+    }else if(c => b){
+        return true;
+    }else{
+        return false;
+    }
+}
