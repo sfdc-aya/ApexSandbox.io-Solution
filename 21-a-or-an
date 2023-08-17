@@ -1,3 +1,8 @@
 public String aOrAn(String word) {
-    //code here
+    if(word.startsWith('a') || word.startsWith('e') || word.startsWith('i') || 
+        word.startsWith('o') || word.startsWith('o')){
+            return 'an '+ word;
+        }else{
+            return 'a '+word;
+        }
 }
