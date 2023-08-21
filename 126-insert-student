@@ -6,5 +6,4 @@ public Id insertStudent(String name, String email) {
     insert stu;
 
     return stu.Id;
-    
 }
