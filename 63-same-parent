@@ -1,0 +1,7 @@
+public Boolean sameParent(Contact c, Opportunity opp) {
+   if(c.accountId == opp.accountId){
+       return true;
+   }else{
+       return false;
+   }
+}
