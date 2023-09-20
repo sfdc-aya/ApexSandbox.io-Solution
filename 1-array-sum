@@ -4,8 +4,8 @@ public static Integer arraySum(List<Integer> numbers) {
         return null;
     }
 
-    for(Integer i=0; i< numbers.size(); i++){
-        return sum+=i;
+    for(Integer num : numbers){
+        sum += num;
     }
-
+    return sum;
 }
