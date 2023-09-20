@@ -1,7 +1,10 @@
 public void setParent(Account acc, Contact con, Opportunity opp) {
-    if(acc != null || acc == null ){
-        con.AccountId = acc.Id;
-        opp.AccountId = acc.Id;
-    }
+     // Check if the provided account or its Id is null
+        if (acc != null && acc.Id != null) {
+            // Set the account as the parent for the contact and opportunity
+            con.AccountId = acc.Id;
+            opp.AccountId = acc.Id;
+        }
            
 }
+
