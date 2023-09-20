@@ -1,11 +1,18 @@
 public void setAccountRating(Account a) {
-   for(Account acc : a){
-       if(acc.AnnualRevenue <= 100000){
-           acc.Rating = 'Cold';
-       }else if(acc.AnnualRevenue <= 500000){
-           acc.Rating = 'Warm';
+     if(a.AnnualRevenue <= 100000){
+           a.Rating = 'Cold';
+       }else if(a.AnnualRevenue <= 500000){
+           a.Rating = 'Warm';
        }else if(acc.AnnualRevenue > 500000){
-           acc.Rating = 'Hot';
+           a.Rating = 'Hot';
        }
-   }
+//    for(Account acc : a){
+//        if(acc.AnnualRevenue <= 100000){
+//            acc.Rating = 'Cold';
+//        }else if(acc.AnnualRevenue <= 500000){
+//            acc.Rating = 'Warm';
+//        }else if(acc.AnnualRevenue > 500000){
+//            acc.Rating = 'Hot';
+//        }
+//    }
 }
