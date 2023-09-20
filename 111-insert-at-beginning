@@ -1,4 +1,6 @@
 public void insertAtStart(String cityName, List<String> cities) {
-    cities.add(cityName);
-    return cities;
+   List<String> resultList = new List<String>();
+   resultList.add(cityName);
+   resultList.addAll(cityNames);
+   return resultList;
 }
