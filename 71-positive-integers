@@ -1,0 +1,15 @@
+public List<Integer> positiveIntegers(List<Integer> numbers) {
+   List<Integer> positiveList = new List<Integer>();
+   if(numbers == null){
+       return null;
+   }
+
+   for(Integer n : numbers){
+       if(n < 0){
+           continue;
+       }if(n>0){
+           positiveList.add(n);
+       }
+   }
+   return positiveList;
+}
