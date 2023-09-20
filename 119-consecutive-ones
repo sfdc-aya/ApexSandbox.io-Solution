@@ -1,0 +1,18 @@
+public Integer maxConsecutiveOnes(Integer[] numbers) {
+    Integer curr = 0;
+    Integer max = 0;
+
+    if(numbers == null){
+        return null;
+    }
+
+    for(Integer n : numbers){
+        if(n == 1){
+            curr++;
+            max = Math.max(max, cur);
+        }else {
+            currentConsecutive = 0;
+        }
+    }
+    return max;
+}
