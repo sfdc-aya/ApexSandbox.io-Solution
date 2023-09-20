@@ -5,7 +5,9 @@ public Boolean isKeyAccount(Account a) {
          return true;
     }else if(a.Industry == 'Retail' && a.AnnualRevenue == 2000000){
          return true;
-    }else(a.Industry != null && a.AnnualRevenue == 500000){
+    }else if(a.Industry != null && a.AnnualRevenue == 500000){
          return true;
+    }else{
+        return false;
     }
 }
