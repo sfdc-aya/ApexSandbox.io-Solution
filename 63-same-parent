@@ -3,7 +3,7 @@ public Boolean sameParent(Contact c, Opportunity opp) {
        return false;
    }else if(c.Account.accountId == opp.accountId){
        return true;
-   }else{
-       return false;
    }
+       return false;
+   
 }
