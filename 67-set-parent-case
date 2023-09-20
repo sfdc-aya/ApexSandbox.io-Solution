@@ -1,16 +1,12 @@
 public void linkParent(Case c1, Case c2) {
-        // Check if both cases have a ContactId
+        
         if (c1.ContactId != null && c2.ContactId != null) {
-            // Check if both cases have the same ContactId
             if (c1.ContactId == c2.ContactId) {
-                // Determine which case was created first
                 if (c1.CreatedDate < c2.CreatedDate) {
-                    c2.ParentId = c1.Id; // Set c1 as the parent of c2
+                    c2.ParentId = c1.Id;
                 } else {
-                    c1.ParentId = c2.Id; // Set c2 as the parent of c1
+                    c1.ParentId = c2.Id;
                 }
             }
         }
-    }
-}
 }
