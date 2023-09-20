@@ -1,5 +1,5 @@
 public static Integer findLargest(List<Integer> nums) {
-	Integer result = 0;
+	Integer result = nums[0];
 
     if(nums == null){
         return null;
@@ -9,7 +9,7 @@ public static Integer findLargest(List<Integer> nums) {
         if(n > result){
             result = n;
         }
-        return result;
     }
+    return result;
 
 }
