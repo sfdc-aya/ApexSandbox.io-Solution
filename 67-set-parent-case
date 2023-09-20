@@ -1,5 +1,4 @@
 public void linkParent(Case c1, Case c2) {
-    public static void linkParent(Case c1, Case c2) {
         // Check if both cases have a ContactId
         if (c1.ContactId != null && c2.ContactId != null) {
             // Check if both cases have the same ContactId
@@ -11,9 +10,6 @@ public void linkParent(Case c1, Case c2) {
                     c1.ParentId = c2.Id; // Set c2 as the parent of c1
                 }
             }
-        } else {
-            // Handle the case where one or both cases do not have a ContactId
-            // You can add custom logic here if needed
         }
     }
 }
