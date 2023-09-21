@@ -1,33 +1,43 @@
 public Boolean companionPlants(List<String> plants) {
-    // Define a set to store companions for each plant
-    Map<String, Set<String>> companions = new Map<String, Set<String>>();
-    
-    // Define companions for each plant
-    companions.put('lettuce', new Set<String>{'cucumbers', 'onions'});
-    companions.put('onions', new Set<String>{'lettuce', 'carrots', 'tomatoes'});
-    companions.put('carrots', new Set<String>{'onions'});
-    companions.put('tomatoes', new Set<String>{'onions'});
-    companions.put('cucumbers', new Set<String>{'lettuce'});
+  public Boolean companionPlants(List<String> plants) {
 
-    // Iterate through the list of plants and check if they have companions
-    for (Integer i = 0; i < plants.size(); i++) {
-        String currentPlant = plants[i];
-        
-        // Check if the current plant has companions defined
-        if (companions.containsKey(currentPlant)) {
-            // Check if the previous and next plants are not companions
-            if (i > 0 && !companions.get(currentPlant).contains(plants[i - 1])) {
-                return false;
-            }
-            if (i < plants.size() - 1 && !companions.get(currentPlant).contains(plants[i + 1])) {
-                return false;
-            }
-        } else {
-            // If the current plant doesn't have companions defined, return false
-            return false;
-        }
+    if (plants.size() == 0) return true;
+
+    if (plants.size() == 1) return false;
+
+    for (Integer i=0; i<plants.size() - 1; i++) {
+
+        if (!companions(plants[i], plants[i+1])) return false;
+
     }
-    
-    // If all plants are planted next to companions, return true
+
     return true;
+
+}
+
+public Boolean companions(String plant1, String plant2) {
+
+    if (plant1 == 'onions' && (plant2 == 'lettuce' || plant2 == 'carrots' || plant2 == 'tomatoes'))
+
+        return true;
+
+    else if (plant1 == 'lettuce' && (plant2 == 'cucumbers' || plant2 == 'onions'))
+
+        return true;
+
+    else if (plant1 == 'cucumbers' && plant2 == 'lettuce')
+
+        return true;
+
+    else if (plant1 == 'carrots' && plant2 == 'onions')
+
+        return true;
+
+    else if (plant1 == 'tomatoes' && plant2 == 'onions')
+
+        return true;
+
+    else return false;
+
+}
 }
