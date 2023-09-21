@@ -1,15 +1,12 @@
 public Boolean companionPlants(List<String> plants) {
     Set<String> companions = new Set<String>{'lettuce-cucumbers', 'lettuce-onions', 'onions-carrots', 'onions-tomatoes'};
-
-    if(plants == null){
-        return null;
-    }
-
-    for(Integer i=1; i < plants.size(); i++){
+    
+    for (Integer i = 1; i < plants.size(); i++) {
         String plantPair = plants[i - 1] + '-' + plants[i];
-        if(!companions.contains(plantPair)){
+        if (!companions.contains(plantPair)) {
             return false;
         }
     }
+    
     return true;
 }
