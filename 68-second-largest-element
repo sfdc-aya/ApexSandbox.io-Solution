@@ -1,0 +1,15 @@
+public Integer secondLargest(List<Integer> numbers) {
+    Integer largest = Integer.MIN_VALUE;
+    Integer secondLargest = Integer.MIN_VALUE;
+
+    for (Integer num : numbers) {
+        if (num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num > secondLargest && num < largest) {
+            secondLargest = num;
+        }
+    }
+
+    return secondLargest;
+}
