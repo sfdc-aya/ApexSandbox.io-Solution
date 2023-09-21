@@ -30,5 +30,4 @@ public Boolean companionPlants(List<String> plants) {
         
         // If all plants are planted next to companions, return true
         return true;
-    }
 }
