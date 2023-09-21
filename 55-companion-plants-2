@@ -1,20 +1,34 @@
 public Boolean companionPlants(List<String> plants) {
- // Define a set to store companion pairs
-    Set<String> companionPairs = new Set<String>{'lettuce-cucumbers', 'lettuce-onions', 'onions-carrots', 'onions-tomatoes'};
-
-    // Iterate through the list of plants
-    for (Integer i = 0; i < plants.size() - 1; i++) {
-        String currentPlant = plants[i];
-        String nextPlant = plants[i + 1];
+// Define a map to store companions for each plant
+        Map<String, Set<String>> companions = new Map<String, Set<String>>();
         
-        // Check if the current and next plant form a companion pair
-        String pair = currentPlant + '-' + nextPlant;
-        String reversePair = nextPlant + '-' + currentPlant;
+        // Define companions for each plant
+        companions.put('lettuce', new Set<String>{'cucumbers', 'onions'});
+        companions.put('onions', new Set<String>{'lettuce', 'carrots', 'tomatoes'});
+        companions.put('carrots', new Set<String>{'onions'});
+        companions.put('tomatoes', new Set<String>{'onions'});
+        companions.put('cucumbers', new Set<String>{'lettuce'});
 
-        if (!companionPairs.contains(pair) && !companionPairs.contains(reversePair)) {
-            return false; // The current and next plants are not companions
+        // Iterate through the list of plants and check if they have companions
+        for (Integer i = 0; i < plants.size(); i++) {
+            String currentPlant = plants[i];
+            
+            // Check if the current plant has companions defined
+            if (companions.containsKey(currentPlant)) {
+                // Check if the previous and next plants are not companions
+                if (i > 0 && !companions.get(currentPlant).contains(plants[i - 1])) {
+                    return false;
+                }
+                if (i < plants.size() - 1 && !companions.get(currentPlant).contains(plants[i + 1])) {
+                    return false;
+                }
+            } else {
+                // If the current plant doesn't have companions defined, return false
+                return false;
+            }
         }
+        
+        // If all plants are planted next to companions, return true
+        return true;
     }
-
-    return true; // All plants are next to companion plants
 }
