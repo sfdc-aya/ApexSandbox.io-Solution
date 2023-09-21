@@ -1,0 +1,14 @@
+public boolean isSorted(List<Integer> numbers) {
+    Boolean ascending = true;
+    Boolean descending = true;
+
+    for (Integer i = 1; i < numbers.size(); i++) {
+        if (numbers[i] > numbers[i - 1]) {
+            descending = false;
+        } else if (numbers[i] < numbers[i - 1]) {
+            ascending = false;
+        }
+    }
+
+    return ascending || descending;
+}
