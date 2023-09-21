@@ -1,6 +1,4 @@
 public Boolean companionPlants(List<String> plants) {
-  public Boolean companionPlants(List<String> plants) {
-
     if (plants.size() == 0) return true;
 
     if (plants.size() == 1) return false;
