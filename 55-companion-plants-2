@@ -1,12 +1,37 @@
 public Boolean companionPlants(List<String> plants) {
-    Set<String> companions = new Set<String>{'lettuce-cucumbers', 'lettuce-onions', 'onions-carrots', 'onions-tomatoes'};
+    Set<String> companions = new Set<String>{'lettuce', 'cucumbers', 'onions', 'carrots', 'tomatoes'};
     
-    for (Integer i = 1; i < plants.size(); i++) {
-        String plantPair = plants[i - 1] + '-' + plants[i];
-        if (!companions.contains(plantPair)) {
+    // Check if the list is empty or contains only one plant (not planted next to a companion)
+    if (plants.isEmpty() || plants.size() == 1) {
+        return false;
+    }
+    
+    // Iterate through the list of plants
+    for (Integer i = 0; i < plants.size() - 1; i++) {
+        String currentPlant = plants[i];
+        String nextPlant = plants[i + 1];
+        
+        // Check if the current and next plants are both in the companions set
+        if (!companions.contains(currentPlant) || !companions.contains(nextPlant)) {
+            return false; // Non-companion plants planted together
+        }
+        
+        // Check if the current and next plants are not the same (not considered companions when planted next to each other)
+        if (currentPlant == nextPlant) {
             return false;
+        }
+        
+        // Check for specific companion pairs
+        if ((currentPlant == 'lettuce' && nextPlant == 'cucumbers') ||
+            (currentPlant == 'lettuce' && nextPlant == 'onions') ||
+            (currentPlant == 'onions' && nextPlant == 'carrots') ||
+            (currentPlant == 'onions' && nextPlant == 'tomatoes')) {
+            continue; // Valid companion pair
+        } else {
+            return false; // Invalid companion pair
         }
     }
     
-    return true;
+    return true; // All plants follow companion planting rules
+
 }
