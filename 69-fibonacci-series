@@ -1,15 +1,11 @@
 public List<Integer> fibonacciSeries(Integer n) {
     List<Integer> result = new List<Integer>();
-    
-    // Handle the base case when n is 1 or 2
     if (n >= 1) {
         result.add(1);
     }
     if (n >= 2) {
         result.add(1);
-    }
-    
-    // Generate the Fibonacci series for n > 2
+    } 
     for (Integer i = 2; i < n; i++) {
         int nextFibonacci = result[i - 1] + result[i - 2];
         result.add(nextFibonacci);
