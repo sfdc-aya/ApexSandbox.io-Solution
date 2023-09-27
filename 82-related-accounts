@@ -3,7 +3,9 @@ public Set<Id> accountIds(List<Opportunity> opps) {
 
     if(opps.size()>0){
         for(Opportunity o : opps){
-            accountId.add(o.AccountId);
+            if(o.AccountId != null){
+                accountId.add(o.AccountId);
+            }
         }
     }
     return accountId;
