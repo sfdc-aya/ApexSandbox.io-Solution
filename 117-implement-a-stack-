@@ -37,5 +37,3 @@ public class Stack {
         return stackList.isEmpty();
     }
 }
-
-}
