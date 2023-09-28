@@ -1,95 +1,143 @@
 public class LinkedList{
-    private Node head;
-    private Node tail;
-    private Integer size;
 
-    public LinkedList() {
-        head = null;
-        tail = null;
-        size = 0;
+    Node head;
+
+    Node tail;
+
+    Integer size;
+
+    public LinkedList(){
+
+        this.head = null;
+
+        this.tail = null;
+
+        this.size = 0;
+
     }
 
-    // Node class representing elements in the linked list
-    private class Node {
-        Integer data;
-        Node next;
+    public void addToFront(Integer value){
 
-        Node(Integer data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+        Node node = new Node();
 
-    // addToFront: Add an element to the front of the list (constant time)
-    public void addToFront(Integer data) {
-        Node newNode = new Node(data);
-        if (isEmpty()) {
-            head = newNode;
-            tail = newNode;
+        node.data = value;
+
+        if (this.head == null) {
+
+            this.head = node;
+
+            this.tail = this.head;
+
         } else {
-            newNode.next = head;
-            head = newNode;
+
+            //do this in order
+
+            node.next = this.head;
+
+            head = node;
+
         }
-        size++;
+
+        this.size++;
+
     }
 
-    // removeFromFront: Remove and return the element at the front of the list (constant time)
-    public Integer removeFromFront() {
-        if (isEmpty()) {
+    public Integer removeFromFront(){
+
+        if(size == 0){
+
             return null;
+
         }
-        Integer removedData = head.data;
+
+        Integer value = head.data;
+
         head = head.next;
+
         size--;
-        if (isEmpty()) {
-            tail = null;
-        }
-        return removedData;
+
+        return value;
+
     }
 
-    // size: Return the current size of the list
-    public Integer size() {
-        return size;
-    }
+    public void addToTail(Integer value){
 
-    // addToTail: Add an element to the end of the list (constant time)
-    public void addToTail(Integer data) {
-        Node newNode = new Node(data);
-        if (isEmpty()) {
+        Node newNode = new Node();
+
+        newNode.data = value;
+
+        if (head == null) {
+
             head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
+
+            tail = head;
+
+        }else {
+
+            this.tail.next = newNode;
+
+            this.tail = newNode;
+
         }
+
         size++;
+
     }
 
-    // removeFromTail: Remove and return the last element in the list
-    public Integer removeFromTail() {
-        if (isEmpty()) {
+    public Integer removeFromTail(){
+
+        if(size() == 0 ){
+
             return null;
-        }
-        if (size() == 1) {
-            Integer removedData = head.data;
+
+        } else if(size() == 1){
+
+            Integer data = head.data;
+
             head = null;
-            tail = null;
-            size--;
-            return removedData;
-        }
+
+            size --;
+
+            return data;
+
+        } 
+
         Node current = head;
-        while (current.next != tail) {
+
+        Node newTail = null;
+
+        while (current.next != null) {
+
+            newTail = current;
+
             current = current.next;
+
         }
-        Integer removedData = tail.data;
-        tail = current;
-        tail.next = null;
-        size--;
-        return removedData;
+
+        Integer data = current.data;
+
+        tail = newTail;
+
+        tail.next = null; 
+
+        size --;
+
+        return data;
+
     }
 
-    // Helper method to check if the list is empty
-    private Boolean isEmpty() {
-        return size == 0;
+    public Integer size(){
+
+        return this.size;
+
     }
+
 }
+
+public class Node{
+
+    Integer data;
+
+    Node next;
+
+}}
