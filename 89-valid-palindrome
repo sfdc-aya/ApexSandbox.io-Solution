@@ -42,4 +42,3 @@ public Boolean isPalindrome(String str){
 
     return true;
 }
-}
