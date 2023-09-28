@@ -1,25 +1,27 @@
 public List<Integer> twoSum(List<Integer> nums, Integer target){
+
     //code here
 
-    List<Integer> answer = NEW LIST<Integer>();
+    Integer left = 0;
 
-    for (Integer i = 0; i < nums.size(); i++){
+    Integer right = nums.size() -1; 
 
-        for (Integer x = 1; x < nums.size(); x++){
+    while(left < right){
 
-            if(nums[i] + nums[x] == target){
+        Integer sum = nums[left] + nums[right];
 
-                answer.add(i);
+        if(sum == target){
 
-                answer.add(x);
+            return new List<Integer>{left, right};
 
-                return answer;
+        }else if (sum < target){
 
-            }
+            left++;
 
-        }
+        }else right --;
 
     }
 
-    return answer;
+    return new List<Integer>();
+
 }
