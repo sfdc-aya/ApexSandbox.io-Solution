@@ -1,0 +1,37 @@
+public static List<Integer> squareList(List<Integer> nums){
+     //We have to account for negative numbers
+
+    Integer left = 0;
+
+    Integer right = nums.size() -1;
+
+    Integer highestIndex = nums.size() -1;
+
+    List<Integer> solution = new List<Integer>(nums.size());
+
+    //basic two pointer
+
+    while(left <= right ){
+
+        Integer leftSquare = nums[left] * nums[left];
+
+        Integer rightSquare = nums[right] * nums[right];
+
+       if(leftSquare > rightSquare){ 
+
+           solution[highestIndex--] = leftSquare;
+
+           left ++;
+
+       }else {
+
+           solution[highestIndex--] = rightSquare;
+
+           right--;
+
+       }
+
+    }   
+
+     return solution;
+}
