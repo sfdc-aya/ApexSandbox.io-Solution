@@ -1,11 +1,18 @@
 public Boolean sameElements(List<Integer> nums1, List<Integer> nums2) {
-    if(nums1 == null || nums2 == null){
-        return null;
-    }
-    for(Integer n : nums1){
-        if(nums2.contains(n)){
-            return true;
-        }
-        return false;
-    }
+
+   if(nums1 != null && nums2 != null){
+        Set<Integer> set1=new Set<Integer>();
+            set1.addAll(nums1);
+        Set<Integer> set2=new Set<Integer>();
+            set2.addAll(nums2);
+        Set<Integer> retainSet=new Set<Integer>();
+            retainSet.addAll(nums1);
+            retainSet.retainAll(set2);
+
+    return (set2.size() == set1.size() && retainSet.size() == set2.size() && 
+            retainSet.size() == set1.size()) ? true:false;
+    
+    }return true;
+   
+   }
 }
