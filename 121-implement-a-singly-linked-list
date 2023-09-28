@@ -1,18 +1,29 @@
 public class LinkedList{
-    private Node head; // Reference to the first node in the list
-    private Node tail; // Reference to the last node in the list
-    private int size;  // Size of the list
+public class LinkedList {
+    private Node head;
+    private Node tail;
+    private Integer size;
 
-    // Constructor to initialize the LinkedList
     public LinkedList() {
         head = null;
         tail = null;
         size = 0;
     }
 
-    // Method to add an element to the front of the list (constant time)
-    public void addToFront(Integer value) {
-        Node newNode = new Node(value);
+    // Node class representing elements in the linked list
+    private class Node {
+        Integer data;
+        Node next;
+
+        Node(Integer data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    // addToFront: Add an element to the front of the list (constant time)
+    public void addToFront(Integer data) {
+        Node newNode = new Node(data);
         if (isEmpty()) {
             head = newNode;
             tail = newNode;
@@ -23,23 +34,28 @@ public class LinkedList{
         size++;
     }
 
-    // Method to remove and return the element at the front of the list (constant time)
+    // removeFromFront: Remove and return the element at the front of the list (constant time)
     public Integer removeFromFront() {
         if (isEmpty()) {
-            return null; // List is empty
+            return null;
         }
-        Integer removedValue = head.data;
+        Integer removedData = head.data;
         head = head.next;
         size--;
         if (isEmpty()) {
-            tail = null; // List is now empty
+            tail = null;
         }
-        return removedValue;
+        return removedData;
     }
 
-    // Method to add an element to the end of the list (constant time)
-    public void addToTail(Integer value) {
-        Node newNode = new Node(value);
+    // size: Return the current size of the list
+    public Integer size() {
+        return size;
+    }
+
+    // addToTail: Add an element to the end of the list (constant time)
+    public void addToTail(Integer data) {
+        Node newNode = new Node(data);
         if (isEmpty()) {
             head = newNode;
             tail = newNode;
@@ -50,36 +66,31 @@ public class LinkedList{
         size++;
     }
 
-    // Method to remove and return the last element in the list
+    // removeFromTail: Remove and return the last element in the list
     public Integer removeFromTail() {
         if (isEmpty()) {
-            return null; // List is empty
+            return null;
         }
-        Integer removedValue = tail.data;
-        if (head == tail) {
-            // There's only one element in the list
+        if (size() == 1) {
+            Integer removedData = head.data;
             head = null;
             tail = null;
-        } else {
-            Node current = head;
-            while (current.next != tail) {
-                current = current.next;
-            }
-            tail = current;
-            tail.next = null;
+            size--;
+            return removedData;
         }
+        Node current = head;
+        while (current.next != tail) {
+            current = current.next;
+        }
+        Integer removedData = tail.data;
+        tail = current;
+        tail.next = null;
         size--;
-        return removedValue;
+        return removedData;
     }
 
-    // Method to return the current size of the list
-    public int size() {
-        return size;
-    }
-
-    // Method to check if the list is empty
-    public boolean isEmpty() {
+    // Helper method to check if the list is empty
+    private Boolean isEmpty() {
         return size == 0;
     }
-}
 }
