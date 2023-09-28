@@ -1,0 +1,13 @@
+public class LinkedList{
+    
+    public void addToFront(Integer value){}
+    public Integer removeFromFront(){}
+    public void addToTail(Integer value){}
+    public Integer removeFromTail(){}
+    public Integer size(){}    
+}
+
+public class Node{
+    Integer data;
+    Node next;
+}
