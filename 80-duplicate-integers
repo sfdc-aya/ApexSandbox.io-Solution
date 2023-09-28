@@ -1,0 +1,13 @@
+public Boolean containsDuplicates(List<Integer> nums) {
+    Set<Integer> setList = new Set<Integer>();
+    if(nums != null){
+        for(Integer n : nums){
+            if(setList.contains(n)){
+                continue;
+            }else{
+                setList.add(n);
+            }
+        }
+        return setList;
+    }
+}
