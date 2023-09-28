@@ -1,11 +1,9 @@
 public String employeeEmail(Map<String, String> employeeIdToEmail, String employeeId) {
     if(employeeIdToEmail != null && employeeId != null){
-        for(Id i : employeeId){
-            if(employeeIdToEmail.containsKey(i)){
-                return employeeIdToEmail.get(i);
-            }else{
-                return 'info@apexsandbox.io';
-            }
-        }
+      if(employeeIdToEmail.containsKey(employeeId)){
+          return employeeIdToEmail.get(i);
+      }else{
+          return 'info@apexsandbox.io';
+      }
     }
 }
