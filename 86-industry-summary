@@ -1,7 +1,6 @@
 public Map<String, Decimal> industrySummary(List<Account> accounts) {
    Map<String, Decimal> mappedIndustry = new Map<String, Decimal>();
 
-   if(accounts != null){
        for(Account a : accounts){
            if(mappedIndustry.containsKey(a.Industry)){
                mappedIndustry.put(a.Industry, mappedIndustry.get(a.Industry) + a.AnnualRevenue);
@@ -10,5 +9,4 @@ public Map<String, Decimal> industrySummary(List<Account> accounts) {
            }
        }
        return mappedIndustry;
-   }
 }
