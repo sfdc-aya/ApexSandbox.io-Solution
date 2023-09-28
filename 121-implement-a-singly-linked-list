@@ -66,4 +66,30 @@ public class LinkedList{
     }
 
     // removeFromTail: Remove and return the last element in the list
+    public Integer removeFromTail() {
+        if (isEmpty()) {
+            return null;
+        }
+        if (size() == 1) {
+            Integer removedData = head.data;
+            head = null;
+            tail = null;
+            size--;
+            return removedData;
+        }
+        Node current = head;
+        while (current.next != tail) {
+            current = current.next;
+        }
+        Integer removedData = tail.data;
+        tail = current;
+        tail.next = null;
+        size--;
+        return removedData;
+    }
+
+    // Helper method to check if the list is empty
+    private Boolean isEmpty() {
+        return size == 0;
+    }
 }
