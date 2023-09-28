@@ -1,0 +1,21 @@
+public static Boolean sameString(String str1, String str2){
+     List<apxio__Class_Enrollment__c> enrollments = new List<apxio__Class_Enrollment__c>(); //Initializing list for enrollments
+
+    apxio__Class__c classSelected = [SELECT Id FROM apxio__Class__c WHERE Name = :className]; //Getting the class based on className arugment
+
+    List<apxio__Student__c> student = [SELECT Id FROM apxio__Student__c WHERE apxio__Email__c = :emails];//bulkifying list of records to get based on emails Arugument
+
+    for(apxio__Student__c s : student){ //Looping through student list
+
+        apxio__Class_Enrollment__c enrollment = new apxio__Class_Enrollment__c(
+
+            apxio__Student__c = s.Id,
+
+            apxio__Offered_Class__c = classSelected.Id);
+
+        enrollments.add(enrollment);
+
+    }
+
+    insert enrollments;
+}
