@@ -1,18 +1,18 @@
 public class Stack {
-public class Stack<T> {
-    private List<T> stackList;
+    public class Stack {
+    private List<Integer> stackList;
 
     public Stack() {
-        stackList = new List<T>();
+        stackList = new List<Integer>();
     }
 
     // Push: Add an object to the top of the stack
-    public void push(T item) {
+    public void push(Integer item) {
         stackList.add(item);
     }
 
     // Pop: Remove and return the object at the top of the stack
-    public T pop() {
+    public Integer pop() {
         if (isEmpty()) {
             return null; // Stack is empty
         }
@@ -20,7 +20,7 @@ public class Stack<T> {
     }
 
     // Peek: Return the object at the top of the stack without removing it
-    public T peek() {
+    public Integer peek() {
         if (isEmpty()) {
             return null; // Stack is empty
         }
@@ -37,4 +37,5 @@ public class Stack<T> {
         return stackList.isEmpty();
     }
 }
+
 }
