@@ -1,13 +1,84 @@
 public class LinkedList{
-    
-    public void addToFront(Integer value){}
-    public Integer removeFromFront(){}
-    public void addToTail(Integer value){}
-    public Integer removeFromTail(){}
-    public Integer size(){}    
-}
+    private Node head; // Reference to the first node in the list
+    private Node tail; // Reference to the last node in the list
+    private int size;  // Size of the list
 
-public class Node{
-    Integer data;
-    Node next;
+    // Constructor to initialize the LinkedList
+    public LinkedList() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
+    // Method to add an element to the front of the list (constant time)
+    public void addToFront(Integer value) {
+        Node newNode = new Node(value);
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        size++;
+    }
+
+    // Method to remove and return the element at the front of the list (constant time)
+    public Integer removeFromFront() {
+        if (isEmpty()) {
+            return null; // List is empty
+        }
+        Integer removedValue = head.data;
+        head = head.next;
+        size--;
+        if (isEmpty()) {
+            tail = null; // List is now empty
+        }
+        return removedValue;
+    }
+
+    // Method to add an element to the end of the list (constant time)
+    public void addToTail(Integer value) {
+        Node newNode = new Node(value);
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        size++;
+    }
+
+    // Method to remove and return the last element in the list
+    public Integer removeFromTail() {
+        if (isEmpty()) {
+            return null; // List is empty
+        }
+        Integer removedValue = tail.data;
+        if (head == tail) {
+            // There's only one element in the list
+            head = null;
+            tail = null;
+        } else {
+            Node current = head;
+            while (current.next != tail) {
+                current = current.next;
+            }
+            tail = current;
+            tail.next = null;
+        }
+        size--;
+        return removedValue;
+    }
+
+    // Method to return the current size of the list
+    public int size() {
+        return size;
+    }
+
+    // Method to check if the list is empty
+    public boolean isEmpty() {
+        return size == 0;
+    }
 }
