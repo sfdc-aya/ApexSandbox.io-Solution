@@ -1,13 +1,6 @@
 public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2){
-
- public:
-  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-    if (!list1 || !list2)
-      return list1 ? list1 : list2;
-    if (list1->val > list2->val)
-      swap(list1, list2);
-    list1->next = mergeTwoLists(list1->next, list2);
+    list1.addAll(list2);
+    list1.sort();
+    System.debug(list1);
     return list1;
-  }
-};
 }
