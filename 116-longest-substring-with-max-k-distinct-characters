@@ -1,0 +1,39 @@
+public static Integer longestDistinctSubstring(String str, Integer k){ 
+
+    //solution here
+
+//solution using Set and List
+
+    Set<String> strSet = new Set<String>();
+
+    List<String> strList = new List<String>();
+
+    Integer maxSize = 0;
+
+    for(String s : str.split('')){
+
+        if(strSet.size() == k && !strSet.contains(s)){
+
+            maxSize = strList.size() > maxSize ? strList.size() : maxSize;
+
+            strSet.clear();
+
+            strList.clear();
+
+        }
+
+        else{
+
+            strSet.add(s);
+
+            strList.add(s);
+
+        }
+
+    }
+
+    maxSize = strList.size() > maxSize ? strList.size() : maxSize;
+
+    return maxSize;
+
+}
