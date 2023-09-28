@@ -1,5 +1,4 @@
 public class Stack {
-    public class Stack {
     private List<Integer> stackList;
 
     public Stack() {
