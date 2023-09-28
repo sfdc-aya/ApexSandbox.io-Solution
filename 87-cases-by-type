@@ -3,7 +3,8 @@ public Map<String, List<Case>> casesByType(List<Case> cases) {
 
     for(Case c : cases){
         if(c.Type != null){
-            caseMap.put(c.Type, c);
+            caseMap.put(c.Type, List<Case> c);
+            return caseMap.get(c);
         }
     }
     return caseMap;
