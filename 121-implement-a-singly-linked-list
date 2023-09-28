@@ -1,5 +1,4 @@
 public class LinkedList{
-
     Node head;
 
     Node tail;
@@ -140,4 +139,4 @@ public class Node{
 
     Node next;
 
-}}
+}
