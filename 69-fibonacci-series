@@ -1,19 +1,42 @@
 public List<Integer> fibonacciSeries(Integer n) {
-  List<Integer> result = new List<Integer>();
 
-    // Handle the base case when n is 1 or 2
-    if (n >= 1) {
-        result.add(1);
-    }
-    if (n >= 2) {
-        result.add(1);
+    //code here
+
+    list<Integer> f = new list<Integer>();
+
+    Integer n1=0;
+
+    Integer n2=1;
+
+    Integer n3=1;
+
+    for(Integer i=1;i<=n;i++)
+
+    {
+
+        if(i==1)
+
+        {
+
+            f.add(1);
+
+        }
+
+        else
+
+        {
+
+            n3 = n1 + n2;
+
+            n1 = n2;
+
+            n2 = n3;
+
+            f.add(n3);
+
+        }
+
     }
 
-    // Generate the Fibonacci series for n > 2
-    for (Integer i = 2; i < n; i++) {
-        int nextFibonacci = result[i - 1] + result[i - 2];
-        result.add(nextFibonacci);
-    }
-
-    return result;
+    return f;
 }
