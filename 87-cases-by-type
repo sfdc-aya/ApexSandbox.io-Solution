@@ -1,0 +1,10 @@
+public Map<String, List<Case>> casesByType(List<Case> cases) {
+    Map<String, List<Case>> caseMap = new Map<String, List<Case>> ;
+
+    for(Case c : cases){
+        if(c.Type != null){
+            caseMap.put(c.Type, c);
+        }
+    }
+    return caseMap;
+}
