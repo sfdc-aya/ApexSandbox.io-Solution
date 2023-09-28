@@ -2,7 +2,7 @@ public String employeeEmail(Map<String, String> employeeIdToEmail, String employ
     if(employeeIdToEmail != null && employeeId != null){
         for(Id i : employeeId){
             if(employeeIdToEmail.contains(i)){
-                return employeeIdToEmail(i);
+                return employeeIdToEmail.get(i);
             }else{
                 return 'info@apexsandbox.io';
             }
