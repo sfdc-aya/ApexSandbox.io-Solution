@@ -1,0 +1,32 @@
+public void defragging(Integer[] memory)
+{
+    // code here
+
+    Integer i = 0;
+
+    Integer j = 0;
+
+    Integer n = memory.size();
+
+    while (j < n) {
+
+        if (memory[j]!= -1) {
+
+            memory.set(i, memory[j]);
+
+            i++;
+
+        }
+
+        j++;
+
+    }
+
+    while (i < n) {
+
+        memory.set(i, -1);
+
+        i++;
+
+    }
+}
