@@ -1,0 +1,25 @@
+public List<Integer> twoSum(List<Integer> nums, Integer target){
+    //code here
+
+    List<Integer> answer = NEW LIST<Integer>();
+
+    for (Integer i = 0; i < nums.size(); i++){
+
+        for (Integer x = 1; x < nums.size(); x++){
+
+            if(nums[i] + nums[x] == target){
+
+                answer.add(i);
+
+                answer.add(x);
+
+                return answer;
+
+            }
+
+        }
+
+    }
+
+    return answer;
+}
