@@ -1,5 +1,4 @@
 public class LinkedList{
-public class LinkedList {
     private Node head;
     private Node tail;
     private Integer size;
