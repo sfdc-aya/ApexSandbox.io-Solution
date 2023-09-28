@@ -1,5 +1,6 @@
 public class Stack {
-private List<T> stackList;
+public class Stack<T> {
+    private List<T> stackList;
 
     public Stack() {
         stackList = new List<T>();
